@@ -20,7 +20,7 @@
 #include <rmutil/util.h>
 
 
-int WR_hmgetall(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
+int RW_hmgetall(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {
     if (argc < 2) {
         return RedisModule_WrongArity(ctx);
     }
@@ -63,11 +63,11 @@ int RedisModule_OnLoad(RedisModuleCtx *ctx, RedisModuleString **argv, int argc) 
     (void) argv;
     (void) argc;
 
-    if (RedisModule_Init(ctx, "wr", 1, REDISMODULE_APIVER_1) == REDISMODULE_ERR) {
+    if (RedisModule_Init(ctx, "rw", 1, REDISMODULE_APIVER_1) == REDISMODULE_ERR) {
         return REDISMODULE_ERR;
     }
 
-    RMUtil_RegisterReadCmd(ctx, "wr.hmgetall", WR_hmgetall);
+    RMUtil_RegisterReadCmd(ctx, "rw.hmgetall", RW_hmgetall);
 
     return REDISMODULE_OK;
 }
