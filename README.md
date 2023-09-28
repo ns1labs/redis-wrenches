@@ -1,6 +1,16 @@
 Reids-Wrenches ~ Various Tools for Redis
 ========================================
 
+New Commands
+------------
+
+`RW.HMGETALL` - Like Redis' `HGETALL` this command gets all fields and values within a hash, but does so over **multiple** hashes.
+
+Syntax:
+```
+RW.HMGETALL key [key ...] 
+```
+
 Contribute
 ----------
 
