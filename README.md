@@ -1,4 +1,4 @@
-Reids-Wrenches ~ Various Tools for Redis
+Redis-Wrenches ~ Various Tools for Redis
 ========================================
 
 New Commands
